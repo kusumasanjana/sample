@@ -2,8 +2,9 @@ function validateForm() {
     var firstName = sanitizeInput(document.getElementById('firstName').value);
     var lastName = sanitizeInput(document.getElementById('lastName').value);
     var email = sanitizeInput(document.getElementById('email').value);
-    var password = document.getElementById('password').value; // Do not sanitize passwords
-    var confirmPassword = document.getElementById('confirmPassword').value; // Do not sanitize passwords
+    var password = document.getElementById('password').value.trim(); // Do not sanitize passwords
+    var confirmPassword = document.getElementById('confirmPassword').value.trim(); // Do not sanitize passwords
+    console.log(password, confirmPassword);
 
     var errorMessage = "";
 
@@ -17,7 +18,7 @@ function validateForm() {
         errorMessage += "Invalid email format.<br>";
     }
 
-    if (password !== confirmPassword) {
+    if (password.toLowerCase()!== confirmPassword.tolowerCase()) {
         errorMessage += "Passwords do not match.<br>";
     }
 
