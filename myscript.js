@@ -2,8 +2,8 @@ function validateForm() {
     var firstName = sanitizeInput(document.getElementById('firstName').value);
     var lastName = sanitizeInput(document.getElementById('lastName').value);
     var email = sanitizeInput(document.getElementById('email').value);
-    var password = sanitizeInput(document.getElementById('password').value);
-    var confirmPassword = sanitizeInput(document.getElementById('confirmPassword').value);
+    var password = document.getElementById('password').value; // Do not sanitize passwords
+    var confirmPassword = document.getElementById('confirmPassword').value; // Do not sanitize passwords
 
     var errorMessage = "";
 
